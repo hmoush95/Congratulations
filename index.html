@@ -101,9 +101,11 @@
 				function whale(){
 					$('img').animate({
 						'right':'100%'
-					}, 4000,function(){
+					}, 3000,function(){
 						$('img').removeAttr('style');
-						whale();
+						setTimeout(function(){
+							whale();
+						}, 4000);
 					});
 				}
 			});
