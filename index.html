@@ -18,6 +18,7 @@
 		body {
 			height: 100%;
 			width: 100%;
+			overflow: hidden;
 		}
 		
 		.back {
@@ -94,10 +95,17 @@
 		<script>
 			$(document).ready(function(){
 				setTimeout(function(){
+					whale();
+				}, 1000);
+
+				function whale(){
 					$('img').animate({
 						'right':'100%'
-					}, 4000);
-				}, 1000);
+					}, 4000,function(){
+						$('img').removeAttr('style');
+						whale();
+					});
+				}
 			});
 		</script>
 	</footer>
